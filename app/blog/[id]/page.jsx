@@ -6,8 +6,8 @@ import Coding from '../../../srcs/public/Coding.jpeg'
 
 async function getData(id) {
   const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`,{ cache: 'no-store' })
-  if (!res.ok) {
-    
+  if (!res.ok) 
+  {
     throw new Error('Failed to fetch data')
   }
   return res.json()
