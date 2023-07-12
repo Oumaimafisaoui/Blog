@@ -1,11 +1,12 @@
 import {NextResponse} from "next/server"
 import connect from "../../utils/db"
-import Post from "../../models/Post"
+import postSchema from "../../models/postSchema"
+
 export const GET  = async (resquest) =>
 {
     try{
             await connect();
-            const posts = await Post.find()
+            const posts = await postSchema.find()
             return new NextResponse(posts, {status:200})
     }
     catch{
